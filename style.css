@@ -1,0 +1,547 @@
+/* ===== Reset / básicos ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header: contenedor de la barra */
+.header {  /*selectores*/
+    position/*propiedades*/: fixed;/*subpropiedades*/
+    height: 78px;
+    width:100%;
+    z-index: 100; /* para cuando se scrolee se continue viendo esta columna*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+    background: #1a1a1a;
+    padding: 11px 0 5px 0;
+    padding-top: 11px;
+}
+
+/* .logo-section ocupa todo el header (para poder posicionar h1 a la izquierda y ul centrado) */
+.logo-section {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/* Logo textual: lo fijamos a la izquierda y centrado verticalmente */
+.logo-section h1 {
+    position: absolute;
+    left: 30px;             /* separación del borde izquierdo */
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    color: #fff;
+    font-size: 28px;        /* ajustá tamaño */
+    line-height: 1;
+    font-weight: 800;
+}
+
+/* Si querés diferenciar el subtítulo */
+.logo-section .subtitle {
+    display: block;
+    font-weight: 400;
+    font-size: 0.65em;
+    letter-spacing: 0.5px;
+}
+
+/* Menú: lo centramos exactamente en el header */
+.logo-section ul {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* centra horizontal y verticalmente */
+    display: flex;
+    gap: 20px;              /* espacio entre items, ajustá si hace falta */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;    /* evita saltos de línea en los links */
+}
+
+/* Links */
+.logo-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    display: inline-block;
+    padding: 6px 4px;
+}
+
+.inicio {
+    margin-top: auto;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10%;
+    color: white;
+    background-image: url("img\\sidebar_cafe01.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.inicio::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;  
+}
+
+.contenido-inicio{ 
+    position: relative;
+    z-index: 2;
+}
+
+.contenido-inicio p:first-of-type {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.contenido-inicio h2{
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;    
+}
+
+.contenido-inicio p:last-of-type {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 10px;    
+}
+
+.btnEncontranos, .button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btnEncontranos:hover {
+    background-color: white;
+    color: #402d1a;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  align-items: start;
+  margin-top: 36px;
+}
+
+/* Tarjeta producto */
+.producto {
+  background: #f5f5f5;
+  padding: 22px;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.03);
+}
+
+.producto img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 18px;
+}
+
+.producto .titulo {
+  font-weight: 700;
+  font-size: 15px;
+  color: #222;
+}
+
+#menu {
+    padding: 60px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+}
+
+#menu p:first-child {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#menu h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #333;
+    font-weight: 700;
+}
+
+.menu-content {
+    display: grid;
+    grid-template-columns: 1fr 600px 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 40px 60px;
+    align-items: start;
+}
+
+.menu-content img {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    align-self: center;
+}
+
+/* Columna izquierda */
+.menu-content article:nth-child(1) { /* BARISTA */
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+}
+
+.menu-content article:nth-child(2) { /* SCEGLIERE */
+    grid-column: 1;
+    grid-row: 2;
+    text-align: right;
+}
+
+.menu-content article:nth-child(3) { /* MINKA */
+    grid-column: 1;
+    grid-row: 3;
+    text-align: right;
+}
+
+/* Columna derecha */
+.menu-content article:nth-child(5) { /* COLOMBIA */
+    grid-column: 3;
+    grid-row: 1;
+    text-align: left;
+}
+
+.menu-content article:nth-child(6) { /* DESCAFEINADO */
+    grid-column: 3;
+    grid-row: 2;
+    text-align: left;
+}
+
+.menu-content article:nth-child(7) { /* BRASIL */
+    grid-column: 3;
+    grid-row: 3;
+    text-align: left;
+}
+
+.menu-content article h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #d4af8c;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.menu-content article p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #777;
+    max-width: 280px;
+}
+
+/* Para columna izquierda - alinear texto a la derecha */
+.menu-content article:nth-child(1) p,
+.menu-content article:nth-child(2) p,
+.menu-content article:nth-child(3) p {
+    margin-left: auto;
+}
+
+/* Para columna derecha - alinear texto a la izquierda */
+.menu-content article:nth-child(5) p,
+.menu-content article:nth-child(6) p,
+.menu-content article:nth-child(7) p {
+    margin-right: auto;
+}
+
+/* Sección de tutoriales */
+#tutoriales {
+  padding: 60px 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tutoriales-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+  gap: 20px; /* espacio entre las tarjetas */
+}
+
+.tutorial-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.tutorial-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantiene proporción y rellena */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.tutorial-card:hover img {
+  transform: scale(1.05); /* efecto zoom al pasar el mouse */
+}
+
+.tutorial-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* fondo oscuro transparente */
+  padding: 15px;
+  max-width: 80%;
+}
+
+.tutorial-overlay h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.tutorial-overlay .tutorial-subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.tutorial-btn {
+  display: inline-block;
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.tutorial-btn:hover {
+  background: #d4af8c; /* color dorado al pasar mouse */
+}
+
+/* SECCIÓN DE LOCALES */
+        #locales {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background-image: url("https://tiendadecafe.com.ar/wp-content/uploads/2021/03/home-tienda.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 2;
+        }
+
+        #locales::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        #locales-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+
+        #locales h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        #locales h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #d4af8c;
+            letter-spacing: 1px;
+        }
+
+        #locales p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        #locales .btn-ingresar {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        #locales .btn-ingresar:hover {
+            background: white;
+            color: #333;
+        }
+
+        /* Footer y demás estilos */
+        .footer {
+            background: #1a1a1a;
+            padding: 60px 0 20px;
+            color: white;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            gap: 40px;
+        }
+
+        .footer-column h3 {
+            color: #d4af8c;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #d4af8c;
+        }
+
+        .subscription-section h3 {
+            color: #d4af8c;
+            margin-bottom: 20px;
+        }
+
+        .subscription-form {
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            border: 1px solid #555;
+            color: white;
+            border-radius: 3px;
+        }
+
+        .subscribe-btn {
+            background: #d4af8c;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .social-section h4 {
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+
+        .copyright-section {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #d4af8c;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .scroll-top:hover {
+            opacity: 1;
+        }
