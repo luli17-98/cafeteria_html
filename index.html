@@ -146,6 +146,25 @@
     
 
     </main>
+
+
+    <section id="suscripciones">
+  <h2>Suscripciones</h2>
+  <table id="tabla-suscripciones">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Filas generadas por JS -->
+    </tbody>
+  </table>
+</section>
+
     
 
 <!--para el pie de la pag-->
@@ -177,15 +196,16 @@
             <div class="subscription-section">
                 <h3>¡Suscribite para recibir descuentos y novedades exclusivas!</h3>
                 
-                <form class="subscription-form">
+                <form id="formSuscripcion" class="subscription-form">
                     <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Tu nombre" required minlength="3">
+                    <input type="text" name="nombre" class="form-input" placeholder="Tu nombre" required minlength="3">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-input" placeholder="Tu email" required>
+                    <input type="email" name="email" class="form-input" placeholder="Tu email" required>
                     </div>
                     <button type="submit" class="subscribe-btn">Suscribirme</button>
                 </form>
+
                 
                 <!-- Redes Sociales -->
                 <div class="social-section">
@@ -208,4 +228,7 @@
         <button class="scroll-top" onclick="this.scrollIntoView({behavior: 'smooth', block: 'start'})">↑</button>
     </footer>
 </body>
+
+<script src="crud.js"></script>
+
 </html>
